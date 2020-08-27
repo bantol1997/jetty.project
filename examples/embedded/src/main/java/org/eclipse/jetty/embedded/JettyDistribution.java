@@ -42,11 +42,11 @@ public class JettyDistribution
     static
     {
         Path jettyHome = asDirectory(System.getProperty("jetty.home"));
-        LOG.debug("JettyDistribution(prop(jetty.home)) = " + jettyHome);
+        LOG.debug("JettyDistribution(prop(jetty.home)) = {}", jettyHome);
         if (jettyHome == null)
         {
             jettyHome = asDirectory(System.getenv().get("JETTY_HOME"));
-            LOG.debug("JettyDistribution(env(JETTY_HOME)) = " + jettyHome);
+            LOG.debug("JettyDistribution(env(JETTY_HOME)) = {}", jettyHome);
         }
 
         Path distro = null;
@@ -66,7 +66,7 @@ public class JettyDistribution
             {
                 Path working = Paths.get(System.getProperty("user.dir"));
                 Path dir = null;
-                LOG.debug("JettyDistribution(prop(user.dir)) = " + working);
+                LOG.debug("JettyDistribution(prop(user.dir)) = {}", working);
                 while (dir == null && working != null)
                 {
                     dir = asDirectory(working.resolve("jetty-distribution/target/distribution").toString());
@@ -77,7 +77,7 @@ public class JettyDistribution
                     // try one parent up
                     working = working.getParent();
                 }
-                LOG.debug("JettyDistribution(working.resolve(...)) = " + distro);
+                LOG.debug("JettyDistribution(working.resolve(...)) = {}", distro);
             }
             catch (Throwable th)
             {
@@ -91,7 +91,7 @@ public class JettyDistribution
         }
         else
         {
-            LOG.debug("JettyDistribution() FOUND = " + distro);
+            LOG.debug("JettyDistribution() FOUND = {}", distro);
         }
         DISTRIBUTION = distro;
     }
