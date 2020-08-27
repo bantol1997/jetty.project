@@ -1,14 +1,13 @@
-
 JETTY
 =====
-The Jetty project is a 100% Java HTTP Server, HTTP Client
-and Servlet Container from the eclipse foundation
+The Eclipse Jetty project is a 100% Java HTTP Server, HTTP Client
+and Servlet Container from the Eclipse Foundation
 
   http://www.eclipse.org/jetty/
 
-Jetty is open source and is dual licensed using the Apache 2.0 and
-Eclipse Public License 1.0.   You may choose either license when
-distributing Jetty.
+Eclipse Jetty is open source and is dual licensed using the
+Apache 2.0 and Eclipse Public License 2.0.
+You may choose either license when distributing Jetty.
 
 
 RUNNING JETTY
@@ -20,7 +19,7 @@ source.
 To run with the default options:
 
   $ cd demo-base
-  $ java -jar ../start.jar
+  $ java -jar ../jetty-home/start.jar
 
 To see the available options and the default arguments
 provided by the start.ini file:
@@ -40,7 +39,6 @@ dependencies) temporarily for this specific run of Jetty.
 To see what modules are available
 
   $ java -jar /path/to/start.jar --list-modules
-
 
 
 JETTY BASE
