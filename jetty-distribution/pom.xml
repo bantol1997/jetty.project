@@ -271,6 +271,13 @@
                 <copy todir="${home-directory}">
                   <fileset dir="${temp-home-directory}/jetty-home-${project.version}/" />
                 </copy>
+                <copy todir="${assembly-directory}">
+                  <fileset dir="${home-directory}">
+                    <include name="NOTICE.txt" />
+                    <include name="LICENSE.txt" />
+                    <include name="VERSION.txt" />
+                  </fileset>
+                </copy>
               </tasks>
             </configuration>
           </execution>
@@ -284,24 +291,6 @@
               <tasks>
                 <chmod dir="${home-directory}/bin" perm="755" includes="**/*.sh" />
               </tasks>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-remote-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>process</goal>
-            </goals>
-            <configuration>
-              <resourceBundles>
-                <resourceBundle>org.eclipse.jetty.toolchain:jetty-distribution-remote-resources:1.2</resourceBundle>
-              </resourceBundles>
-              <outputDirectory>${assembly-directory}</outputDirectory>
             </configuration>
           </execution>
         </executions>
